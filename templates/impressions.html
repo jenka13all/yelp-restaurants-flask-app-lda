@@ -1,0 +1,24 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}Yelp Restaurant Review Impressions{% endblock %}
+
+{% block content %}
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top" style="background-color: black;">
+    <a class="navbar-brand" href="{{url_for('index')}}" style="color: white;">Home</a>
+    <a class="navbar-brand" href="#" style="color: white;">{{ restaurant_name }}</a>
+</nav>
+    
+
+<div class="container text-center" id="wordmap">
+    <div class="row">
+      <div class="col-sm-6"><img src="/{{ wordcloud1 }}" alt="Wordcloud 1 for {{ restaurant_name }}"></div>
+      <div class="col-sm-6"><img src="/{{ wordcloud2 }}" alt="Wordcloud 2 for {{ restaurant_name }}"></div>
+    </div>       
+</div> 
+
+</main>
+{% endblock %}
+
+
+

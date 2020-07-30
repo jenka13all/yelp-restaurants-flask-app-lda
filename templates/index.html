@@ -1,0 +1,30 @@
+{% extends "bootstrap/base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block head %}
+    {{ JSGlue.include() }}
+    {{ super() }}    
+{% endblock %}
+
+{% block title %}Yelp Restaurant Review Impressions{% endblock %}
+
+{% block content %}
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top" style="background-color: black;">
+    <a class="navbar-brand" href="{{url_for('index')}}" style="color: white;">Home</a>
+    <a class="navbar-brand" href="#" style="color: white;">Select your restaurant!</a>
+</nav>
+
+<main role="main" class="container">
+    <div class="starter-template">
+        {{ wtf.quick_form(form, extra_classes='form-signin') }}
+
+        <div class="container" id="restaurant_list"></div> 
+    </div>
+</main>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{url_for('.static', filename='formLogic.js')}}"></script>
+    {{ super() }}
+{% endblock %}
+
